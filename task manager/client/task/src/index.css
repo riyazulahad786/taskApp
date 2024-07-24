@@ -1,0 +1,35 @@
+.form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.form_group{
+    width: 400px;
+    box-shadow: 0 0 10px gray;
+    padding: 20px;
+}
+input{
+    border: none !important;
+}
+input:focus{
+    border: none;
+    border-bottom: 1px solid #000; /* Maintain the same style on focus */
+    outline: none;
+    box-shadow: none;  
+}
+.form-group{
+    border: none;
+    border-bottom: 1px solid #000; /* Adjust the color and thickness as needed */
+    outline: none;
+}
+.form-group:focus{
+    border: none !important;
+    border-bottom: 1px solid #000 !important; /* Maintain the same style on focus */
+    box-shadow: none !important;
+    outline: none !important;
+}
+.create{
+    width: 30px;
+}
