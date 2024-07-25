@@ -23,7 +23,7 @@ function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/getAllTasksForUser/${userId}`, {
+      const response = await axios.get(`https://serverapp-2vre.onrender.com/api/getAllTasksForUser/${userId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -46,7 +46,7 @@ function Home() {
     }
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/createTask',
+        'https://serverapp-2vre.onrender.com/api/createTask',
         { title, description, status, userId },
         { headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` } }
       );
@@ -69,7 +69,7 @@ function Home() {
     }
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/updateTask/${editTask._id}`,
+        `https://serverapp-2vre.onrender.com/api/updateTask/${editTask._id}`,
         { title: editTask.title, description: editTask.description, status: editTask.status },
         { headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` } }
       );
@@ -84,7 +84,7 @@ function Home() {
 
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:8080/api/deleteTask/${taskId}`, {
+      await axios.delete(`https://serverapp-2vre.onrender.com/api/deleteTask/${taskId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

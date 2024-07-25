@@ -23,7 +23,7 @@ function Login() {
     e.preventDefault();
     const { email, password } = user;
     try {
-      const register_url = "http://localhost:8080/auth/login";
+      const register_url = "https://serverapp-2vre.onrender.com/auth/login";
       const response = await fetch(register_url, {
         method: "POST",
         headers: {

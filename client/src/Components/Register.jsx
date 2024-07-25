@@ -34,7 +34,7 @@ function Register() {
     }
 
     try {
-      const register_url = 'http://localhost:8080/auth/signup';
+      const register_url = 'https://serverapp-2vre.onrender.com/auth/signup';
       const response = await fetch(register_url, {
         method: "POST",
         headers: {
@@ -60,7 +60,7 @@ function Register() {
 
   const handleGoogleLoginSuccess = async (response) => {
     try {
-      const register_url = 'http://localhost:8080/auth/google-signup';
+      const register_url = 'https://serverapp-2vre.onrender.com/auth/google-signup';
       const res = await fetch(register_url, {
         method: "POST",
         headers: {
