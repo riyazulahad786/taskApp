@@ -17,7 +17,10 @@ const PORT = process.env.PORT || 8080;
 // Apply middleware
 app.use(cors());
 app.use(bodyParser.json()); // Middleware to parse JSON must come before your routes
-
+app.use((req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  });
+  
 // Use the auth router
 app.use('/auth', Auth);
 app.use('/api', createTaskRoutes);
