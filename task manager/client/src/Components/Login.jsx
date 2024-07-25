@@ -93,7 +93,9 @@ function Login() {
             <p>
               New user ? <a href="/register">Register</a>
             </p>
+           
           </div>
+         
         </form>
       </div>
     </div>

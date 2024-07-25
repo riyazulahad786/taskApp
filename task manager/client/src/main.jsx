@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ToastContainer />
         <GoogleOAuthProvider
-        clientId="7JeHOvPGefGZQJNBqblKixuzKxpK9CFc"
+        clientId="746990677113-4pv7og36hmuullq15ohe10h6v0oe7j6q.apps.googleusercontent.com"
         
         >
              <App />
