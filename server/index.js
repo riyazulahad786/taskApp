@@ -14,7 +14,7 @@ require('./Models/dataBase');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Your API routes here
 // Example: app.use('/api', apiRouter);
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 // Apply middleware
 app.use(cors());
