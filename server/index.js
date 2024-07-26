@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path'); // Require the path module
 const app = express();
 const bodyParser = require('body-parser');
 const Auth = require('./Routes/authRouters');
@@ -13,14 +14,24 @@ require('./Models/dataBase');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
+app.use(express.static(path.join(__dirname, 'client/build')));
 
+// Your API routes here
+// Example: app.use('/api', apiRouter);
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 // Apply middleware
 app.use(cors());
 app.use(bodyParser.json()); // Middleware to parse JSON must come before your routes
-app.use((req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-  
+// app.use((req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//   });
+// app.use(express.static(path.join(__dirname, 'client/build')));
+
 // Use the auth router
 app.use('/auth', Auth);
 app.use('/api', createTaskRoutes);
